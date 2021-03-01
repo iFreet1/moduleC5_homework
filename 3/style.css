@@ -1,0 +1,43 @@
+.block {
+    display: flex;
+    justify-content: center;
+    background-color: #636060;
+}
+
+.paragraph {
+    margin: 2px 5px 0 0;
+}
+
+.block-error {
+    background-color: #eb5151;
+}
+
+.block-control {
+    padding: 10px 0 0 0;
+}
+
+.block-images {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.btn {
+    background-color: rgb(71, 71, 71);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 17px;
+    line-height: 25px;
+    margin: 5px 0;
+}
+
+.block-photo {
+    display: flex;
+    justify-content: center;
+    flex: 1 1 24%;
+}
+
+.inner-text {
+    color: #e0e0e0;
+}
+
