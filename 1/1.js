@@ -1,9 +1,6 @@
 console.log('xmlDOM');
 const h1 = document.getElementById("h1_text");
 
-h1.innerHTML = "123";
-
-
 const parser = new DOMParser();
 
 const XMLstring = `
