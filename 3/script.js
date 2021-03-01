@@ -42,6 +42,8 @@ function getImages(url, callback) {
     xhr.send();
 }
 
+// Функция отображения изображений
+
 function showImages(imagesData) {
     let images = '';
 

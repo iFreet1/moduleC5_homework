@@ -35,10 +35,13 @@ function checkNumberInterval(pageNumber, limit) {
     return resultPageNumber && resultLimit;
 }
 
+// Функция отображения изображений
+
 function showImages(data) {
     let images = "";
-    let localStorageData = [];
+    let localStorageData = []; // Массив объектов (с сылками на изображения) для сохранения
 
+    // Если в data, есть данные, формируем массив для локального сохранения и HTML разметку
     if (data) {
         data.forEach(element => {
             const item = {
@@ -53,15 +56,14 @@ function showImages(data) {
                 </div>`;   
         });
 
-        console.log(localStorageData);
-        const ff = JSON.stringify(localStorageData);
-        console.log(ff);
-
+        // Преобразуем массив объектов в JSON и сохраняем
         localStorage.setItem('lastImages', JSON.stringify(localStorageData));
     }
 
     blockImages.innerHTML = images;
 }
+
+// Функция получения изображений
 
 function getImages(url, pageNumber, limit) {
     url += `/list?page=${pageNumber}&limit=${limit}`;
@@ -74,10 +76,15 @@ function getImages(url, pageNumber, limit) {
         });
 }
 
+// Вешаем функции проверки и получения изображений на кнопку
+
 btnLoadImages.addEventListener('click', () => {
+    // Проверяем на корректность введенные параметры чтения изображений и в случае успеха выводим изображения
     if (checkNumberInterval(inputPage.value, inputLimit.value)) {
         getImages(`https://picsum.photos/v2`, inputPage.value, inputLimit.value);
     }
 });
+
+// После загрузки скрипта, пробуем прочитать JSON строку с сылками на последние показанные изображения
 
 showImages(JSON.parse(localStorage.getItem('lastImages')));

@@ -18,6 +18,8 @@ function checkNumberInterval(value1, value2) {
     }
 }
 
+// Функция получения и отображения изображения
+
 function getImages(url, width, height) {
     url = `${url}/${width}/${height}`;
 
@@ -37,6 +39,7 @@ function getImages(url, width, height) {
 }
 
 btnLoadImages.addEventListener('click', () => {
+    // Проверяем на корректность введенные размеры изображения и в случае успеха выводим изображение
     if (checkNumberInterval(inputWidth.value, inputHeight.value)) {
         getImages(`https://picsum.photos`, inputWidth.value, inputHeight.value);
     }
